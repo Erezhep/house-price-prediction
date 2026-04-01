@@ -1,33 +1,26 @@
-# California Housing Price Prediction 🏠📉
+# 🏠 Housing Price Prediction: Тұрғын үй бағасын болжау
 
-## Project Overview
-This repository contains a Machine Learning project aimed at predicting real estate prices in California. Using the California Housing dataset, the goal is to build and compare different regression models to estimate the `median_house_value` based on various demographic and geographical features.
+Бұл жоба нақты үйлердің сипаттамаларына (ауданы, бөлме саны, кондиционердің болуы және т.б.) сүйене отырып, олардың нарықтық құнын болжауға арналған. Деректер жиынтығы шағын болғанымен (545 жол), ол модельдердің мультиколлинеарлық жағдайында қалай жұмыс істейтінін тексеруге өте қолайлы.
 
-## Dataset
-* **Source:** [California Housing Prices on Kaggle](https://www.kaggle.com/datasets/camnugent/california-housing-prices)
-* **Description:** The data pertains to the houses found in a given California district and some summary stats about them based on the 1990 census data. It contains 20,640 entries.
-* **Key Features:** * `longitude`, `latitude`: Geographical coordinates.
-  * `housing_median_age`: Median age of a house within a block.
-  * `total_rooms`, `total_bedrooms`: Room counts for a block.
-  * `population`, `households`: Demographic data of the block.
-  * `median_income`: Median income for households within a block of houses (measured in tens of thousands of US Dollars).
-  * `ocean_proximity`: Categorical variable indicating distance to the ocean.
-* **Target Variable:** `median_house_value`
+## 📊 Деректер жиыны (Dataset)
+* **Дереккөз:** [Housing Prices on Kaggle](https://www.kaggle.com/datasets/yasserh/housing-prices-dataset)
+* **Сипаттама:** Датасет 545 нысаннан және 13 бағаннан тұрады. Мұнда үйдің бағасына әсер ететін сандық (`area`, `bedrooms`) және категориялық (`mainroad`, `airconditioning`, `prefarea`) белгілер жинақталған.
+* **Ерекшелігі:** Деректерде бос ұяшықтар (null values) жоқ, бұл алғашқы талдауды жеңілдетеді.
 
-## Machine Learning Models Used
-To evaluate and compare predictive performance, the following regression algorithms were implemented:
-* **Linear Regression:** Serves as the baseline model to understand direct, linear relationships between features and house prices.
-* **Polynomial Regression:** Used to capture non-linear relationships and interactions between various housing features.
-* **Ridge Regression (L2 Regularization):** Applied to handle potential multicollinearity among features (e.g., total rooms and bedrooms) and prevent model overfitting.
+## 🤖 Машиналық оқыту модельдері
+Болжам жасау үшін регрессияның келесі алгоритмдері таңдалды:
+* **Linear Regression:** Базалық модель ретінде факторлардың бағаға тікелей әсерін анықтау үшін.
+* **Polynomial Regression:** Үйдің ауданы мен бағасы арасындағы сызықты емес (non-linear) байланыстарды анықтау үшін.
+* **Ridge Regression (L2 Regularization):** Мультиколлинеарлық мәселесін шешу және модельдің "қайта оқытылуын" (overfitting) болдырмау үшін.
 
-## Tech Stack
-* **Language:** Python
-* **Libraries:** Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn
+## 🛠 Технологиялық стек
+* **Тіл:** Python 3.x
+* **Кітапханалар:** Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn
 
-## Project Structure
+## 📂 Жоба құрылымы
 ```text
-├── data/                   # Folder for the housing.csv file
-├── notebooks/              # Jupyter notebooks for Exploratory Data Analysis (EDA) and Modeling
-├── src/                    # Python scripts for data preprocessing
-├── README.md               # Project documentation
-└── requirements.txt        # List of dependencies
+├── data/                   # housing.csv файлы орналасқан қалта
+├── notebooks/              # EDA және модельдеуге арналған Jupyter ноутбуктер
+├── src/                    # Деректерді өңдеуге арналған Python скрипттері
+├── README.md               # Жобаның құжаттамасы
+└── requirements.txt        # Қажетті кітапханалар тізімі
